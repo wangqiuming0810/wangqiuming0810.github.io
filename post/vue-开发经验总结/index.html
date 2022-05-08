@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Vue 开发经验总结 element-ui使用导航栏跳转路由用法 这是element-ui中介绍的用法
+&amp;lt;el-menu :default-active=&amp;#34;activeIndex&amp;#34; class=&amp;#34;el-menu-demo&amp;#34; mode=&amp;#34;horizontal&amp;#34; @select=&amp;#34;handleSelect&amp;#34;&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;1&amp;#34;&amp;gt;处理中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;我的工作台&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2-4&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;选项4&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;3&amp;#34; disabled&amp;gt;消息中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;4&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;https://www.ele.me&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;订单管理&amp;lt;/a&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;/el-menu&amp;gt;  &amp;lt;script&amp;gt;  export default {  data() {  return {  activeIndex: &amp;#39;1&amp;#39;  };  },  methods: {  handleSelect(key, keyPath) {  console.'><title></title>
+
+<link rel='canonical' href='https://wangqiuming0810.github.io/post/vue-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content=''>
+<meta property='og:description' content='Vue 开发经验总结 element-ui使用导航栏跳转路由用法 这是element-ui中介绍的用法
+&amp;lt;el-menu :default-active=&amp;#34;activeIndex&amp;#34; class=&amp;#34;el-menu-demo&amp;#34; mode=&amp;#34;horizontal&amp;#34; @select=&amp;#34;handleSelect&amp;#34;&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;1&amp;#34;&amp;gt;处理中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;我的工作台&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2-4&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;选项4&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;3&amp;#34; disabled&amp;gt;消息中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;4&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;https://www.ele.me&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;订单管理&amp;lt;/a&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;/el-menu&amp;gt;  &amp;lt;script&amp;gt;  export default {  data() {  return {  activeIndex: &amp;#39;1&amp;#39;  };  },  methods: {  handleSelect(key, keyPath) {  console.'>
+<meta property='og:url' content='https://wangqiuming0810.github.io/post/vue-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/'>
+<meta property='og:site_name' content='My New Hugo Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="Vue 开发经验总结 element-ui使用导航栏跳转路由用法 这是element-ui中介绍的用法
+&amp;lt;el-menu :default-active=&amp;#34;activeIndex&amp;#34; class=&amp;#34;el-menu-demo&amp;#34; mode=&amp;#34;horizontal&amp;#34; @select=&amp;#34;handleSelect&amp;#34;&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;1&amp;#34;&amp;gt;处理中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;我的工作台&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-submenu index=&amp;#34;2-4&amp;#34;&amp;gt;  &amp;lt;template slot=&amp;#34;title&amp;#34;&amp;gt;选项4&amp;lt;/template&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-1&amp;#34;&amp;gt;选项1&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-2&amp;#34;&amp;gt;选项2&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;2-4-3&amp;#34;&amp;gt;选项3&amp;lt;/el-menu-item&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;/el-submenu&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;3&amp;#34; disabled&amp;gt;消息中心&amp;lt;/el-menu-item&amp;gt;  &amp;lt;el-menu-item index=&amp;#34;4&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;https://www.ele.me&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;订单管理&amp;lt;/a&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;/el-menu&amp;gt;  &amp;lt;script&amp;gt;  export default {  data() {  return {  activeIndex: &amp;#39;1&amp;#39;  };  },  methods: {  handleSelect(key, keyPath) {  console.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/vue-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"></a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="vue-开发经验总结">Vue 开发经验总结</h1>
+<h2 id="element-ui使用导航栏跳转路由用法">element-ui使用导航栏跳转路由用法</h2>
+<p>这是element-ui中介绍的用法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span> <span style="color:#f92672">:</span><span style="color:#66d9ef">default</span><span style="color:#f92672">-</span><span style="color:#a6e22e">active</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;activeIndex&#34;</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;el-menu-demo&#34;</span> <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">select</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;handleSelect&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">处理中心</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">submenu</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">我的工作台</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-1&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-2&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-3&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项3</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">submenu</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项4</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/template&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4-1&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4-2&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2-4-3&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">选项3</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-submenu&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-submenu&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">disabled</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">消息中心</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">el</span><span style="color:#f92672">-</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">-</span><span style="color:#a6e22e">item</span> <span style="color:#a6e22e">index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ele.me&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">订单管理</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;&lt;/el-menu-item&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-menu&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">activeIndex</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1&#39;</span>
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">handleSelect</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">keyPath</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><p><strong>属性参数的介绍</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">mode</td>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">horizontal / vertical</td>
+<td style="text-align:left">vertical</td>
+</tr>
+<tr>
+<td style="text-align:left">collapse</td>
+<td style="text-align:left">是否水平折叠收起菜单（仅在 mode 为 vertical 时可用）</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">菜单的背景色（仅支持 hex 格式）</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">#ffffff</td>
+</tr>
+<tr>
+<td style="text-align:left">text-color</td>
+<td style="text-align:left">菜单的文字颜色（仅支持 hex 格式）</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">#303133</td>
+</tr>
+<tr>
+<td style="text-align:left">active-text-color</td>
+<td style="text-align:left">当前激活菜单的文字颜色（仅支持 hex 格式）</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">#409EFF</td>
+</tr>
+<tr>
+<td style="text-align:left">default-active</td>
+<td style="text-align:left">当前激活菜单的 index</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">default-openeds</td>
+<td style="text-align:left">当前打开的 sub-menu 的 index 的数组</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">unique-opened</td>
+<td style="text-align:left">是否只保持一个子菜单的展开</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">menu-trigger</td>
+<td style="text-align:left">子菜单打开的触发方式(只在 mode 为 horizontal 时有效)</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">hover / click</td>
+<td style="text-align:left">hover</td>
+</tr>
+<tr>
+<td style="text-align:left">router</td>
+<td style="text-align:left">是否使用 vue-router 的模式，启用该模式会在激活导航时以 index 作为 path 进行路由跳转</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">collapse-transition</td>
+<td style="text-align:left">是否开启折叠动画</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">true</td>
+</tr>
+</tbody>
+</table></div>
+<p>加上属性 router，就可以使用index作为路由路径进行跳转</p>
+<p>具体写法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">el-menu</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">:default-active</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.$route.path&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;el-menu-demo&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">router</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">select</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;handleSelect&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">background-color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ec7f30&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">text-color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ffffff&#34;</span>
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(item,i) in navList&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#a6e22e">:index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ item.navItem }}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">el-menu-item</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">el-menu</span>&gt;
+</span></span></code></pre></div><p>数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">navList</span><span style="color:#f92672">:</span>[
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/main&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;首页&#39;</span>},
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServicing&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;未结束的服务&#39;</span>},
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServed&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;已结束的服务&#39;</span>},
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchRechargeList&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;充值历史&#39;</span>},
+</span></span><span style="display:flex;"><span>      ],
+</span></span></code></pre></div><p>正常的路由配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/Login&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Login&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Login</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/Register&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Register&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Register</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServed&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SearchServed&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">SearchServed</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServicing&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SearchServicing&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">SearchServicing</span>},
+</span></span></code></pre></div><p>二级路由
+二级路由的写法我只想到了这一种：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">el-menu</span> <span style="color:#a6e22e">:default-active</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.$route.path&#34;</span> <span style="color:#a6e22e">router</span> <span style="color:#a6e22e">mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;horizontal&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">el-submenu</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(item,i) in navList&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#a6e22e">v-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.second&#34;</span> <span style="color:#a6e22e">:index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">template</span> <span style="color:#a6e22e">slot</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;{{ item.navItem }}&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(sec,j) in item.second&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#a6e22e">:index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sec.name&#34;</span>&gt;{{ sec.navItem }}&lt;/<span style="color:#f92672">el-menu-item</span>&gt;
+</span></span><span style="display:flex;"><span>     &lt;/<span style="color:#f92672">el-submenu</span>&gt;
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">el-menu-item</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(item,i) in navList&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#a6e22e">v-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;!item.second&#34;</span> <span style="color:#a6e22e">:index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.name&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>     {{ item.navItem }}
+</span></span><span style="display:flex;"><span>     &lt;/<span style="color:#f92672">el-menu-item</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#f92672">el-menu</span>&gt;
+</span></span></code></pre></div><p>数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">navList</span><span style="color:#f92672">:</span>[
+</span></span><span style="display:flex;"><span>       {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/findProject&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;发现项目&#39;</span>,<span style="color:#a6e22e">second</span><span style="color:#f92672">:</span>[{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/findProject/communityActivity&#39;</span>,<span style="color:#a6e22e">navItem</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;社区动态&#39;</span>}]}
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>最后在router文件里加入相应的二级路由就可以了</p>
+<h2 id="使用axios-进行前后端数据交互">使用axios 进行前后端数据交互</h2>
+<p>安装axios，终端执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">axios</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">save</span>
+</span></span></code></pre></div><p>在main.js中引入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>
+</span></span></code></pre></div><p>并加入以下两句，设置一个默认路径，方便后面接口写法更简洁：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">//配置请求的基本路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">baseURL</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://........&#39;</span><span style="color:#75715e">//后端给的api地址接口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">$http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">axios</span>
+</span></span></code></pre></div><p><strong>前端解决一下跨域问题</strong></p>
+<p>通常前后端不在一台电脑对接，都有可能会出现跨域问题，报错cos啥的，不同源，这个时候很大问题就是跨域问题，通常前后端都要配置一下。下面介绍一下解决跨域问题的方法，其实就是添加一段代码。</p>
+<p>在vue.config.js文件中添加以下代码，没有这个文件则自己创建一个，如果有其他配置项，自己看情况添加代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">defineConfig</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;@vue/cli-service&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineConfig</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lintOnSave</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">transpileDependencies</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">devServer</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">proxy</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//配置跨域
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#39;/api&#39;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// target: &#39;http://10.128.161.59:8410&#39;, //这里填写项目真实的后台接口地址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http://10.128.164.14&#39;</span>, <span style="color:#75715e">//这里填写项目真实的后台接口地址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">changOrigin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#75715e">//设置允许跨域
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">pathRewrite</span><span style="color:#f92672">:</span> {<span style="color:#75715e">//这个重写不可省略！因为我们真正请求的地址并不含 /api
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#e6db74">&#39;^/api&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">/* 当我们在浏览器中看到请求的地址为：http://localhost:8080/api/data/getdata 时
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          因为重写了 /api ，所以实际上访问的地址是：http://x.x.x.x:x/data/getdata，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          */</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>配置完毕，具体页面的数据请求：</p>
+<p>写法一：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">submit</span>(){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;api/v1/ServicingStatusList&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">form</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>)<span style="color:#75715e">//可以具体写项目的具体逻辑，数据赋值，最好一个一个赋值。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ServeData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$message</span>.<span style="color:#a6e22e">success</span>(<span style="color:#e6db74">&#39;查询成功&#39;</span>)
+</span></span><span style="display:flex;"><span>      }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;查询出错&#39;</span>)
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>异步写法二：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">login</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$refs</span>.<span style="color:#a6e22e">loginFormRef</span>.<span style="color:#a6e22e">validate</span>(<span style="color:#66d9ef">async</span> <span style="color:#a6e22e">valid</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">valid</span>) <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;login&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">loginForm</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">meta</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$message</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;登录失败！&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$message</span>.<span style="color:#a6e22e">success</span>(<span style="color:#e6db74">&#39;登录成功&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 1. 将登录成功之后的 token，保存到客户端的 sessionStorage 中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//   1.1 项目中出了登录之外的其他API接口，必须在登录之后才能访问
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//   1.2 token 只应在当前网站打开期间生效，所以将 token 保存在 sessionStorage 中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        window.<span style="color:#a6e22e">sessionStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;token&#39;</span>, <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">token</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 2. 通过编程式导航跳转到后台主页，路由地址是 /home
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$router</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;/home&#39;</span>)
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h2 id="使用路由进行页面之间的跳转">使用路由进行页面之间的跳转</h2>
+<p><strong>npm安装</strong></p>
+<pre tabindex="0"><code>npm install vue-router --save
+或者
+npm install vue-router@4
+</code></pre><p><strong>具体使用</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1u5wjll00j20zg0hnq7n.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20220502165607738"
+	
+	
+></p>
+<p>代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">VueRouter</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;vue-router&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">main</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/main&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Login</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/login/Login&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Register</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/Register/Register&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SearchServed</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/search/SearchServed&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SearchServicing</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/search/SearchServicing&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">VipInfo</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/info/VipInfo&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SearchRechargeList</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/components/search/SearchRechargeList&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//创建路由
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VueRouter</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">routes</span><span style="color:#f92672">:</span>[
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#a6e22e">redirect</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/main&#39;</span> },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/main&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;main&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/Login&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Login&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Login</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/Register&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Register&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Register</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServed&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SearchServed&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">SearchServed</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchServicing&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SearchServicing&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">SearchServicing</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/VipInfo&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;VipInfo&#39;</span> , <span style="color:#a6e22e">component</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">VipInfo</span>},
+</span></span><span style="display:flex;"><span>        { <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/SearchRechargeList&#39;</span>,<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SearchRechargeList&#39;</span>,<span style="color:#a6e22e">component</span><span style="color:#f92672">:</span><span style="color:#a6e22e">SearchRechargeList</span>}
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//导出路由
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">router</span>
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 My New Hugo Site
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
