@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2022-05-08T20:26:01+08:00</lastmod>
+  </url><url>
+    <loc>https://wangqiuming0810.github.io/</loc>
+    <lastmod>2022-05-08T20:26:01+08:00</lastmod>
+  </url><url>
+    <loc>https://wangqiuming0810.github.io/post/</loc>
+    <lastmod>2022-05-08T20:26:01+08:00</lastmod>
+  </url><url>
     <loc>https://wangqiuming0810.github.io/categories/</loc>
   </url><url>
     <loc>https://wangqiuming0810.github.io/tags/example/</loc>
   </url><url>
-    <loc>https://wangqiuming0810.github.io/</loc>
-  </url><url>
     <loc>https://wangqiuming0810.github.io/categories/other/</loc>
   </url><url>
-    <loc>https://wangqiuming0810.github.io/post/</loc>
+    <loc>https://wangqiuming0810.github.io/tags/</loc>
   </url><url>
     <loc>https://wangqiuming0810.github.io/post/readme/</loc>
-  </url><url>
-    <loc>https://wangqiuming0810.github.io/tags/</loc>
   </url>
 </urlset>
