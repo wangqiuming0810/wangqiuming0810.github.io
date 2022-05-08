@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Hugo&#43;GitHub快速搭建博客 - My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Hugo&#43;GitHub快速搭建博客" />
+<meta property="og:description" content="首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。
 在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。
 安装homebrew 安装这个是我踩了很多坑也解决，可能我比较傻逼。
 首先第一个坑就是，如果直接使用官网提供的地址来进行安装，中国连接不上那个地址，下载失败。
 所以我们应该使用中国的一些镜像网站进行下载。
 然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。
 这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。
-M1 芯片 Mac 上 Homebrew 安装
-ARM版Homebrew最终被安装在/opt/homebrew路径下。
+M1 芯片 Mac 上 Homebrew 安装 ARM版Homebrew最终被安装在/opt/homebrew路径下。
 直接执行：
-/bin/bash -c &amp;#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&amp;#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
+/bin/bash -c &#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
   在终端执行命令echo $SHELL获得终端类型：
- /bin/zsh =&amp;gt; zsh =&amp;gt; .zprofile /bin/bash =&amp;gt; bash =&amp;gt; .bash_profile    如果看到的是/bin/zsh
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zprofile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; 如果看到的是/bin/bash
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
- 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。'><title>Hugo&#43;GitHub快速搭建博客</title>
+ /bin/zsh =&gt; zsh =&gt; .zprofile /bin/bash =&gt; bash =&gt; .bash_profile    如果看到的是/bin/zsh
+echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.zprofile eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34; 如果看到的是/bin/bash
+echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.bash_profile eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
+ 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-08T20:26:01+08:00" />
+<meta property="article:modified_time" content="2022-05-08T20:26:01+08:00" /><meta property="og:site_name" content="My cool site" />
 
-<link rel='canonical' href='https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/'>
-
-<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='Hugo&#43;GitHub快速搭建博客'>
-<meta property='og:description' content='首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。
-在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。
-安装homebrew 安装这个是我踩了很多坑也解决，可能我比较傻逼。
-首先第一个坑就是，如果直接使用官网提供的地址来进行安装，中国连接不上那个地址，下载失败。
-所以我们应该使用中国的一些镜像网站进行下载。
-然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。
-这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。
-M1 芯片 Mac 上 Homebrew 安装
-ARM版Homebrew最终被安装在/opt/homebrew路径下。
-直接执行：
-/bin/bash -c &amp;#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&amp;#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
-  在终端执行命令echo $SHELL获得终端类型：
- /bin/zsh =&amp;gt; zsh =&amp;gt; .zprofile /bin/bash =&amp;gt; bash =&amp;gt; .bash_profile    如果看到的是/bin/zsh
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zprofile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; 如果看到的是/bin/bash
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
- 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。'>
-<meta property='og:url' content='https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/'>
-<meta property='og:site_name' content='My New Hugo Site'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-05-08T20:26:01&#43;08:00'/><meta property='article:modified_time' content='2022-05-08T20:26:01&#43;08:00'/>
-<meta name="twitter:title" content="Hugo&#43;GitHub快速搭建博客">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo&#43;GitHub快速搭建博客"/>
 <meta name="twitter:description" content="首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。
 在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。
 安装homebrew 安装这个是我踩了很多坑也解决，可能我比较傻逼。
@@ -48,160 +34,65 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 所以我们应该使用中国的一些镜像网站进行下载。
 然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。
 这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。
-M1 芯片 Mac 上 Homebrew 安装
-ARM版Homebrew最终被安装在/opt/homebrew路径下。
+M1 芯片 Mac 上 Homebrew 安装 ARM版Homebrew最终被安装在/opt/homebrew路径下。
 直接执行：
-/bin/bash -c &amp;#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&amp;#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
+/bin/bash -c &#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
   在终端执行命令echo $SHELL获得终端类型：
- /bin/zsh =&amp;gt; zsh =&amp;gt; .zprofile /bin/bash =&amp;gt; bash =&amp;gt; .bash_profile    如果看到的是/bin/zsh
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zprofile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; 如果看到的是/bin/bash
-echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
- 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。">
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+ /bin/zsh =&gt; zsh =&gt; .zprofile /bin/bash =&gt; bash =&gt; .bash_profile    如果看到的是/bin/zsh
+echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.zprofile eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34; 如果看到的是/bin/bash
+echo &#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39; &gt;&gt; ~/.bash_profile eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
+ 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><link rel="prev" href="https://wangqiuming0810.github.io/post/vue-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo+GitHub快速搭建博客",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/wangqiuming0810.github.io\/post\/hugo\u002bgithub%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/"
+        },"genre": "post","wordcount":  200 ,
+        "url": "https:\/\/wangqiuming0810.github.io\/post\/hugo\u002bgithub%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2022-05-08T20:26:01+08:00","dateModified": "2022-05-08T20:26:01+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
-            <h2 class="site-description"></h2>
+            </div>
         </div>
-    </header><ol class="menu" id="main-menu">
-        
-        
-
-        <div class="menu-bottom-section">
-            
-            
-                <li id="dark-mode-toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <span>Dark Mode</span>
-                </li>
-            
-        </div>
-    </ol>
-</aside>
-<main class="main full-width">
-    <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hugo&#43;GitHub快速搭建博客</a>
-        </h2>
-    
-        
     </div>
-
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">May 08, 2022</time>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site">My cool site</a>
             </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    1 minute read
-                </time>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
             </div>
-        
-    </footer>
-    
-
-    
-</div>
-</header>
-
-    <section class="article-content">
-    
-    
-    <p>首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。</p>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Hugo&#43;GitHub快速搭建博客</h1><div class="content" id="content"><p>首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。</p>
 <p>在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。</p>
 <h2 id="安装homebrew">安装homebrew</h2>
 <p>安装这个是我踩了很多坑也解决，可能我比较傻逼。</p>
@@ -209,8 +100,8 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 <p>所以我们应该使用中国的一些镜像网站进行下载。</p>
 <p>然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。</p>
 <p>这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。</p>
-<p><a class="link" href="https://brew.idayer.com/guide/m1/"  target="_blank" rel="noopener"
-    >M1 芯片 Mac 上 Homebrew 安装</a></p>
+<p><a href="https://brew.idayer.com/guide/m1/" target="_blank" rel="noopener noreffer">M1 芯片 Mac 上 Homebrew 安装</a>
+</p>
 <p><code>ARM</code>版<code>Homebrew</code>最终被安装在<code>/opt/homebrew</code>路径下。</p>
 <p>直接执行：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
@@ -241,19 +132,19 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ export PATH=$PATH:/usr/local/go/bin
 </span></span></code></pre></div><h2 id="通过-homebrew-安装-hugo">通过 Homebrew 安装 Hugo</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>brew install hugo
-</span></span></code></pre></div><p>安装包下载地址为：<a class="link" href="https://link.zhihu.com/?target=https%3A//golang.org/dl/"  target="_blank" rel="noopener"
-    >https://golang.org/dl/</a></p>
+</span></span></code></pre></div><p>安装包下载地址为：<a href="https://link.zhihu.com/?target=https%3A//golang.org/dl/" target="_blank" rel="noopener noreffer">https://golang.org/dl/</a>
+</p>
 <p>等待安装。</p>
 <p>在使用之前推荐一个B站教程，讲的很详细。</p>
-<p><a class="link" href="https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click"  target="_blank" rel="noopener"
-    >https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click</a></p>
+<p><a href="https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click" target="_blank" rel="noopener noreffer">https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click</a>
+</p>
 <h2 id="本地建立网站">本地建立网站</h2>
 <p>首先新建一个网站，名字随便起，这里以 <code>myblog</code> 为例，<code>[PATH]</code> 为自己想要存放的路径，<code>myblog</code> 为网站名。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>hugo new site [PATH]/myblog
 </span></span></code></pre></div><p>这个时候myblog就成了你的博客的根路径，接下一系列操作都要围绕这个路径展开。</p>
 <h2 id="下载主题">下载主题</h2>
-<p><a class="link" href="https://link.zhihu.com/?target=https%3A//themes.gohugo.io/hugo-notepadium/"  target="_blank" rel="noopener"
-    >hugo官网主题地址</a></p>
+<p><a href="https://link.zhihu.com/?target=https%3A//themes.gohugo.io/hugo-notepadium/" target="_blank" rel="noopener noreffer">hugo官网主题地址</a>
+</p>
 <p>这里可以使用git拉取，也可以直接下载压缩包，压缩到theme文件夹下。主题文件名待会需要使用到。</p>
 <h2 id="新建文章">新建文章</h2>
 <p>在 /myblog/content/pos/ 下新建一个markdown文件。路径取决于具体看你当前在哪。编辑。</p>
@@ -271,8 +162,8 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>这是一篇名为README的文章。
-</span></span></code></pre></div><p>文章 Header 说明（详见<a class="link" href="https://link.zhihu.com/?target=https%3A//www.gohugo.org/"  target="_blank" rel="noopener"
-    >官方说明文档</a>）：</p>
+</span></span></code></pre></div><p>文章 Header 说明（详见<a href="https://link.zhihu.com/?target=https%3A//www.gohugo.org/" target="_blank" rel="noopener noreffer">官方说明文档</a>
+）：</p>
 <ul>
 <li>title : 文章题目</li>
 <li>date : 发布日期，可以改为其他形式日期格式的日期</li>
@@ -287,16 +178,14 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 </span></span><span style="display:flex;"><span>比如我的：hugo server -t hugo-theme-stack --buildDrafts
 </span></span></code></pre></div><p>这个时候，在本地1313端口就运行起来了，可以复制到浏览器地址栏下打开。终端不要关闭。</p>
 <h2 id="将仓库同步到github">将仓库同步到github</h2>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20220508210158318"
-	
-	
-></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg, https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg 1.5x, https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg"
+        title="image-20220508210158318" /></p>
 <p>在github新建一个仓库，名字就为 用户名.github.io</p>
 <h2 id="本地关联仓库">本地关联仓库</h2>
 <p>在myblog路径下执行下面指令，关联仓库地址</p>
@@ -312,140 +201,17 @@ echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;
 <p>现在你的文件就上传到了github，会自动渲染。</p>
 <p>这个时候你就可以访问，https://用户名.github.io/。就可以看到你的博客网站内容了。</p>
 <p>到此结束。</p>
-
-</section>
-
-
-    <footer class="article-footer">
-    
-
-    </footer>
-
-
-    
-</article>
-
-    
-
-    
-
-     
-    
-        
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-        2022 My New Hugo Site
-    </section>
-    
-    <section class="powerby">
-        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.98.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
         </div>
+    </footer></div>
 
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
-            >
-
-            </main>
-    
-
-        </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-
-    </body>
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/plugins/parent-fit/ls.parent-fit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
