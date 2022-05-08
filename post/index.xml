@@ -1,139 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on My New Hugo Site</title>
-        <link>https://wangqiuming0810.github.io/post/</link>
-        <description>Recent content in Posts on My New Hugo Site</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Sun, 08 May 2022 20:26:01 +0800</lastBuildDate><atom:link href="https://wangqiuming0810.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hugo&#43;GitHub快速搭建博客</title>
-        <link>https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-        <pubDate>Sun, 08 May 2022 20:26:01 +0800</pubDate>
-        
-        <guid>https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-        <description>&lt;p&gt;首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。&lt;/p&gt;
-&lt;p&gt;在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。&lt;/p&gt;
-&lt;h2 id=&#34;安装homebrew&#34;&gt;安装homebrew&lt;/h2&gt;
-&lt;p&gt;安装这个是我踩了很多坑也解决，可能我比较傻逼。&lt;/p&gt;
-&lt;p&gt;首先第一个坑就是，如果直接使用官网提供的地址来进行安装，中国连接不上那个地址，下载失败。&lt;/p&gt;
-&lt;p&gt;所以我们应该使用中国的一些镜像网站进行下载。&lt;/p&gt;
-&lt;p&gt;然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。&lt;/p&gt;
-&lt;p&gt;这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://brew.idayer.com/guide/m1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;M1 芯片 Mac 上 Homebrew 安装&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ARM&lt;/code&gt;版&lt;code&gt;Homebrew&lt;/code&gt;最终被安装在&lt;code&gt;/opt/homebrew&lt;/code&gt;路径下。&lt;/p&gt;
-&lt;p&gt;直接执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/bin/bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在终端执行命令&lt;code&gt;echo $SHELL&lt;/code&gt;获得终端类型：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/bin/zsh&lt;/code&gt; =&amp;gt; &lt;code&gt;zsh&lt;/code&gt; =&amp;gt; &lt;code&gt;.zprofile&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/bin/bash&lt;/code&gt; =&amp;gt; &lt;code&gt;bash&lt;/code&gt; =&amp;gt; &lt;code&gt;.bash_profile&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果看到的是&lt;code&gt;/bin/zsh&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zprofile
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;/opt/homebrew/bin/brew shellenv&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果看到的是&lt;code&gt;/bin/bash&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;/opt/homebrew/bin/brew shellenv&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;从&lt;code&gt;macOS Catalina&lt;/code&gt;(10.15.x) 版开始，&lt;code&gt;Mac&lt;/code&gt;使用&lt;code&gt;zsh&lt;/code&gt;作为默认&lt;code&gt;Shell&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;安装go语言环境&#34;&gt;安装go语言环境&lt;/h2&gt;
-&lt;p&gt;先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;配置环境变量&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ export PATH=$PATH:/usr/local/go/bin
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;通过-homebrew-安装-hugo&#34;&gt;通过 Homebrew 安装 Hugo&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install hugo
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装包下载地址为：&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//golang.org/dl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://golang.org/dl/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;等待安装。&lt;/p&gt;
-&lt;p&gt;在使用之前推荐一个B站教程，讲的很详细。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.bilibili.com/video/BV1q4411i7gL?spm_id_from=333.1007.top_right_bar_window_history.content.click&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;本地建立网站&#34;&gt;本地建立网站&lt;/h2&gt;
-&lt;p&gt;首先新建一个网站，名字随便起，这里以 &lt;code&gt;myblog&lt;/code&gt; 为例，&lt;code&gt;[PATH]&lt;/code&gt; 为自己想要存放的路径，&lt;code&gt;myblog&lt;/code&gt; 为网站名。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site [PATH]/myblog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个时候myblog就成了你的博客的根路径，接下一系列操作都要围绕这个路径展开。&lt;/p&gt;
-&lt;h2 id=&#34;下载主题&#34;&gt;下载主题&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//themes.gohugo.io/hugo-notepadium/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;hugo官网主题地址&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这里可以使用git拉取，也可以直接下载压缩包，压缩到theme文件夹下。主题文件名待会需要使用到。&lt;/p&gt;
-&lt;h2 id=&#34;新建文章&#34;&gt;新建文章&lt;/h2&gt;
-&lt;p&gt;在 /myblog/content/pos/ 下新建一个markdown文件。路径取决于具体看你当前在哪。编辑。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new post/README.md
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;具体hugo的各种配置自行百度。&lt;/p&gt;
-&lt;p&gt;在文章输入一些内容&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: &amp;#34;README&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date: {.Date}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags: [&amp;#34;Example&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slug: &amp;#34;readme&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;categories: [&amp;#34;Other&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;draft: false
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;comment: false
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;这是一篇名为README的文章。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;文章 Header 说明（详见&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//www.gohugo.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官方说明文档&lt;/a&gt;）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;title : 文章题目&lt;/li&gt;
-&lt;li&gt;date : 发布日期，可以改为其他形式日期格式的日期&lt;/li&gt;
-&lt;li&gt;tags : 给文章打上相应的标签，可以配置多个。在网站的配置中可以配置 &lt;code&gt;Tags&lt;/code&gt; 进行自动分类&lt;/li&gt;
-&lt;li&gt;slug : 文章标语&lt;/li&gt;
-&lt;li&gt;categories : 文章归属分类，可以配置多个。在网站配置中可以配置 &lt;code&gt;Categories&lt;/code&gt; 进行自动收录&lt;/li&gt;
-&lt;li&gt;draft : 当前文章是否为草稿，true则在网站启动的过程中省略，false则在网站中发布&lt;/li&gt;
-&lt;li&gt;comment : 评论功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;44-编译项目开启服务&#34;&gt;4.4 编译项目，开启服务&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server --theme=主题名字 --buildDrafts
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;比如我的：hugo server -t hugo-theme-stack --buildDrafts
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个时候，在本地1313端口就运行起来了，可以复制到浏览器地址栏下打开。终端不要关闭。&lt;/p&gt;
-&lt;h2 id=&#34;将仓库同步到github&#34;&gt;将仓库同步到github&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://tva1.sinaimg.cn/large/e6c9d24egy1h21aq6sxy0j20y00u0wi2.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20220508210158318&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;在github新建一个仓库，名字就为 用户名.github.io&lt;/p&gt;
-&lt;h2 id=&#34;本地关联仓库&#34;&gt;本地关联仓库&lt;/h2&gt;
-&lt;p&gt;在myblog路径下执行下面指令，关联仓库地址&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo --theme&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;hugo-theme-stack --baseUrl&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://wangqiuming0810.github.io/&amp;#34;&lt;/span&gt; --buildDrafts
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个时候就生成了，public文件夹。&lt;/p&gt;
-&lt;h2 id=&#34;通过git-上传文件&#34;&gt;通过git 上传文件&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;第一次提交&amp;#34;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git remote add origin https://github.com/wangqiuming0810/wangqiuming0810.github.io.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push -u origin master
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果授权验证不通过，当然你也可以通过JB的软件上传github仓库。就是git操作就对了。&lt;/p&gt;
-&lt;p&gt;现在你的文件就上传到了github，会自动渲染。&lt;/p&gt;
-&lt;p&gt;这个时候你就可以访问，https://用户名.github.io/。就可以看到你的博客网站内容了。&lt;/p&gt;
-&lt;p&gt;到此结束。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>第一篇博客</title>
-        <link>https://wangqiuming0810.github.io/post/readme/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://wangqiuming0810.github.io/post/readme/</guid>
-        <description>&lt;p&gt;欢迎来到王秋明的博客&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://wangqiuming0810.github.io/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 May 2022 20:26:01 +0800</lastBuildDate><atom:link href="https://wangqiuming0810.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo&#43;GitHub快速搭建博客</title>
+      <link>https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 08 May 2022 20:26:01 +0800</pubDate>
+      
+      <guid>https://wangqiuming0810.github.io/post/hugo&#43;github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>首先，搭建一个个人的博客网站，并不复杂，在这里，我们需要用到hugo这个框架，来管理我们本地的博客仓库地址。但我在搭建的时候也踩了一些坑。记录一下。以下均是在mac环境进行的。
+在mac和linux环境下可以使用brew这个包管理工具，来下载安装hugo。
+安装homebrew 安装这个是我踩了很多坑也解决，可能我比较傻逼。
+首先第一个坑就是，如果直接使用官网提供的地址来进行安装，中国连接不上那个地址，下载失败。
+所以我们应该使用中国的一些镜像网站进行下载。
+然后第二个坑就是，M1芯片安装homebrew并不能够使用，而且默认安装路径应该在 。/opt 而不是。/local。
+这个坑我搜了很多博客都并不能解决这个问题。同时也让我感觉各大搜索引擎真的很垃圾。让我开始觉得mac就是垃圾。然后我就看到了这个文章。
+M1 芯片 Mac 上 Homebrew 安装
+ARM版Homebrew最终被安装在/opt/homebrew路径下。
+直接执行：
+/bin/bash -c &amp;#34;$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)&amp;#34; 然后还需设置环境变量，具体操作步骤如下，一定要仔细阅读。
+  在终端执行命令echo $SHELL获得终端类型：
+ /bin/zsh =&amp;gt; zsh =&amp;gt; .zprofile /bin/bash =&amp;gt; bash =&amp;gt; .bash_profile    如果看到的是/bin/zsh
+echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zprofile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; 如果看到的是/bin/bash
+echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;    从macOS Catalina(10.15.x) 版开始，Mac使用zsh作为默认Shell。
+ 安装go语言环境 先安装 Go 语言环境，不然在用 Homebrew 安装 Hugo 的过程中可能会报奇奇怪怪的错误甚至安装失败，Hugo文档也是说需要安装好 Go 语言环境的。</description>
+    </item>
+    
+    <item>
+      <title>第一篇博客</title>
+      <link>https://wangqiuming0810.github.io/post/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqiuming0810.github.io/post/readme/</guid>
+      <description>欢迎来到王秋明的博客</description>
+    </item>
+    
+  </channel>
 </rss>
